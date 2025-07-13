@@ -41,7 +41,7 @@ https://github.com/user-attachments/assets/8413ec34-9369-41cd-9f88-3a3f7ea38336
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/anime-recommendation-system.git
+   https://github.com/kashika-marxia/recommendation-system.git
 
 2. Navigate to the project folder:
 
