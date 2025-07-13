@@ -7,7 +7,7 @@ A simple and interactive web-based Anime Recommendation System that allows users
 ## 🌐 Live Demo
 
 [Click here to try it out](#)  
-(Add your GitHub Pages or hosted link here if deployed)
+file:///C:/Users/Krishna/Desktop/recommendation%20system/index.html
 
 ---
 
