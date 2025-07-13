@@ -1,125 +1,91 @@
-📖 README: Anime Recommendation System
+# 🎌 Anime Recommendation System
 
-📌 Project Title
-
-Anime Recommendation System (HTML Only)
-
-🎯 Description
-
-This is a simple and beginner-friendly HTML webpage that displays anime recommendations categorized by genres such as Horror, Adventure, Action, Fantasy, and Romance. It helps users easily discover new anime to watch based on their favorite genre.
-
+A simple and interactive web-based Anime Recommendation System that allows users to explore popular anime by genres like *Horror, **Adventure, **Action, **Fantasy, and **Romance*.
 
 ---
 
-🧩 Features
+## 🌐 Live Demo
 
-Genre-based categorization (Horror, Adventure, Action, Fantasy, Romance)
-
-Simple and clean dark-themed layout
-
-Fully written in HTML and styled with internal CSS
-
-Beginner-friendly code and structure
-
-Emojis for a more engaging and fun UI
-
-
+[Click here to try it out](#)  
+(Add your GitHub Pages or hosted link here if deployed)
 
 ---
 
-🖼 Genres and Anime Included
+## 📋 Features
 
-🎃 Horror
-
-The Maxim
-
-Tokyo Ghoul
-
-Devilman Crybaby
-
-Death Note
-
-
-🏴‍☠ Adventure
-
-One Piece
-
-Black Clover
-
-Spy x Family
-
-
-💥 Action
-
-Naruto
-
-Jujutsu Kaisen
-
-One Punch Man
-
-
-🧙 Fantasy
-
-Demon Slayer
-
-One Piece
-
-Attack on Titan
-
-
-💖 Romance
-
-Your Name
-
-Fruits Basket
-
-My Happy Marriage
-
-
+- 🎬 Start with a clean interface and a *Genre* button  
+- 🎭 Browse through 5 anime genres:
+  - Horror
+  - Adventure
+  - Action
+  - Fantasy
+  - Romance
+- 📺 View recommended anime one at a time per genre
+- 📊 See basic info:  
+  - Name  
+  - Number of Episodes  
+  - Overall Rating
+- 🔁 Use *Next* to cycle through anime
+- 🔙 Return to Genre Selection or Home screen
 
 ---
 
-🚀 How to Run
+## 🛠 Built With
 
-1. Download or clone the repository.
+- *HTML5*
+- *CSS3*
+- *Vanilla JavaScript (no frameworks)*
+
+---
+
+## 📂 How to Run Locally
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/anime-recommendation-system.git
+
+2. Navigate to the project folder:
+
+cd anime-recommendation-system
 
 
-2. Open the index.html file in any web browser.
+3. Open index.html in your browser:
 
+Double-click the file
 
-3. Browse through the anime list by genre.
+Or right-click and choose "Open with" > your browser
+
 
 
 
 
 ---
 
-🛠 Tech Stack
+📸 Preview
 
-HTML5
+> No images used in this version – the focus is on functionality and text-based recommendations.
 
-CSS3 (internal styling)
+
+
+
+---
+
+🚀 Future Enhancements (To-do)
+
+✅ Add anime images for visual appeal
+
+✅ Make it mobile responsive
+
+❌ Add search or filter within genres
+
+❌ Integrate with MyAnimeList or Jikan API
+
+❌ Allow users to bookmark favorite anime
 
 
 
 ---
 
-📁 Folder Structure
+📄 License
 
-anime-recommendation/
-│
-├── index.html        # Main HTML page
-└── README.md         # Project description
-
-
----
-
-✨ Future Improvements (Optional)
-
-Add images/posters for each anime
-
-Add JavaScript to filter or search by genre
-
-Make the layout responsive for mobile and tablet screens
-
-Connect to an API for dynamic anime data
+This project is open source and available under the MIT License.
