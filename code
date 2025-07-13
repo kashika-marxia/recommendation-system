@@ -1,112 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Anime Recommendation System</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #1b1b1b;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4b0082;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-        .container {
-            padding: 20px;
-        }
-        .genre {
-            margin-bottom: 30px;
-        }
-        .genre h2 {
-            color: #ff69b4;
-            border-bottom: 2px solid #ff69b4;
-            padding-bottom: 5px;
-        }
-        ul {
-            list-style: none;
-            padding-left: 10px;
-        }
-        ul li::before {
-            content: "🎬 ";
-        }
-        .footer {
-            text-align: center;
-            background-color: #4b0082;
-            padding: 15px;
-            color: #fff;
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Anime Recommendation System</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 50px;
+    }
+    h1, h2 {
+      color: #ff4081;
+    }
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 16px;
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #6a0dad;
+    }
+    .hidden {
+      display: none;
+    }
+    .anime-details {
+      font-size: 20px;
+      margin: 20px;
+    }
+    .genre-buttons {
+      margin-top: 30px;
+    }
+    .genre-buttons button {
+      display: inline-block;
+      margin: 10px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <!-- Start Screen -->
+  <div id="start-screen">
     <h1>Anime Recommendation System</h1>
-    <p>Find your next favorite anime by genre!</p>
-</header>
+    <button onclick="showGenres()">🎬 Genre</button>
+  </div>
 
-<div class="container">
-
-    <div class="genre">
-        <h2>🎃 Horror</h2>
-        <ul>
-            <li>The Maxim</li>
-            <li>Tokyo Ghoul</li>
-            <li>Devilman Crybaby</li>
-            <li>Death Note</li>
-        </ul>
+  <!-- Genre Selection -->
+  <div id="genre-screen" class="hidden">
+    <h2>Select a Genre</h2>
+    <div class="genre-buttons">
+      <button onclick="selectGenre('horror')">Horror</button>
+      <button onclick="selectGenre('adventure')">Adventure</button>
+      <button onclick="selectGenre('action')">Action</button>
+      <button onclick="selectGenre('fantasy')">Fantasy</button>
+      <button onclick="selectGenre('romance')">Romance</button>
     </div>
+    <br>
+    <button onclick="backToStart()">⬅ Back</button>
+  </div>
 
-    <div class="genre">
-        <h2>🏴‍☠ Adventure</h2>
-        <ul>
-            <li>One Piece</li>
-            <li>Black Clover</li>
-            <li>Spy x Family</li>
-        </ul>
+  <!-- Anime Display -->
+  <div id="anime-screen" class="hidden">
+    <h2 id="genre-title"></h2>
+    <div class="anime-details">
+      <p><strong>Name:</strong> <span id="anime-name"></span></p>
+      <p><strong>Episodes:</strong> <span id="anime-episodes"></span></p>
+      <p><strong>Rating:</strong> <span id="anime-rating"></span></p>
     </div>
+    <button onclick="nextAnime()">Next</button>
+    <button onclick="backToGenres()">⬅ Back to Genres</button>
+  </div>
 
-    <div class="genre">
-        <h2>💥 Action</h2>
-        <ul>
-            <li>Naruto</li>
-            <li>Jujutsu Kaisen</li>
-            <li>One Punch Man</li>
-        </ul>
-    </div>
+  <script>
+    const animeData = {
+      horror: [
+        { name: "The Maxim", episodes: 24, rating: "7.4/10" },
+        { name: "Tokyo Ghoul", episodes: 24, rating: "7.8/10" },
+        { name: "Devilman Crybaby", episodes: 10, rating: "7.9/10" },
+        { name: "Death Note", episodes: 37, rating: "8.6/10" }
+      ],
+      adventure: [
+        { name: "One Piece", episodes: "1000+", rating: "8.8/10" },
+        { name: "Black Clover", episodes: 170, rating: "8.1/10" },
+        { name: "Spy x Family", episodes: 25, rating: "8.5/10" }
+      ],
+      action: [
+        { name: "Naruto", episodes: 220, rating: "8.3/10" },
+        { name: "Jujutsu Kaisen", episodes: 47, rating: "8.6/10" },
+        { name: "One Punch Man", episodes: 24, rating: "8.4/10" }
+      ],
+      fantasy: [
+        { name: "Demon Slayer", episodes: 55, rating: "8.7/10" },
+        { name: "One Piece", episodes: "1000+", rating: "8.8/10" },
+        { name: "Attack on Titan", episodes: 89, rating: "9.0/10" }
+      ],
+      romance: [
+        { name: "Your Name", episodes: 1, rating: "8.9/10" },
+        { name: "Fruits Basket", episodes: 63, rating: "8.5/10" },
+        { name: "My Happy Marriage", episodes: 12, rating: "7.7/10" }
+      ]
+    };
 
-    <div class="genre">
-        <h2>🧙 Fantasy</h2>
-        <ul>
-            <li>Demon Slayer</li>
-            <li>One Piece</li>
-            <li>Attack on Titan</li>
-        </ul>
-    </div>
+    let currentGenre = "";
+    let currentIndex = 0;
 
-    <div class="genre">
-        <h2>💖 Romance</h2>
-        <ul>
-            <li>Your Name</li>
-            <li>Fruits Basket</li>
-            <li>My Happy Marriage</li>
-        </ul>
-    </div>
+    function showGenres() {
+      document.getElementById("start-screen").classList.add("hidden");
+      document.getElementById("genre-screen").classList.remove("hidden");
+    }
 
-</div>
+    function selectGenre(genre) {
+      currentGenre = genre;
+      currentIndex = 0;
+      displayAnime();
+      document.getElementById("genre-screen").classList.add("hidden");
+      document.getElementById("anime-screen").classList.remove("hidden");
+    }
 
-<div class="footer">
-    <p>© 2025 AnimeRec by Kashika | All rights reserved</p>
-</div>
+    function displayAnime() {
+      const anime = animeData[currentGenre][currentIndex];
+      document.getElementById("genre-title").textContent = 
+        currentGenre.charAt(0).toUpperCase() + currentGenre.slice(1);
+      document.getElementById("anime-name").textContent = anime.name;
+      document.getElementById("anime-episodes").textContent = anime.episodes;
+      document.getElementById("anime-rating").textContent = anime.rating;
+    }
+
+    function nextAnime() {
+      currentIndex = (currentIndex + 1) % animeData[currentGenre].length;
+      displayAnime();
+    }
+
+    function backToGenres() {
+      document.getElementById("anime-screen").classList.add("hidden");
+      document.getElementById("genre-screen").classList.remove("hidden");
+    }
+
+    function backToStart() {
+      document.getElementById("genre-screen").classList.add("hidden");
+      document.getElementById("start-screen").classList.remove("hidden");
+    }
+  </script>
 
 </body>
 </html>
