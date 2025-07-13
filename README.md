@@ -4,10 +4,9 @@ A simple and interactive web-based Anime Recommendation System that allows users
 
 ---
 
-## 🌐 Live Demo
+heres demo video
 
-[Click here to try it out](#)  
-file:///C:/Users/Krishna/Desktop/recommendation%20system/index.html
+https://github.com/user-attachments/assets/8413ec34-9369-41cd-9f88-3a3f7ea38336
 
 ---
 
